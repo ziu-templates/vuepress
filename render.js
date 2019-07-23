@@ -26,6 +26,7 @@ module.exports = function ({promptsData = {}, handlebars = {}, metalsmith = {}, 
     });
     
     metalsmith.use((files, metalsmith, next) => {
+      console.log(files);
         renderFn(files, promptsData, render, next);
     });
 }
@@ -36,7 +37,6 @@ function renderFn (files, promptsData, render, next) {
     filePaths.forEach((filePath) => {
         pipeObj.next(function () {
             let content = files[filePath].contents.toString();
-            console.log(content);
             if (!/{{([^{}]+)}}/g.test(content)) {
                 return this.next();
             }
