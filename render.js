@@ -4,6 +4,10 @@
 let pkgData = require('./meta.js'),
     pipe = require('./pipe.js');
 module.exports = function ({promptsData = {}, handlebars = {}, metalsmith = {}, match = {}, render = {}} = {}) {
+  promptsData.home = true;
+  promptsData.heroImage = '/logo.png';
+  promptsData.actionText = '快速上手 →';
+  promptsData.actionLink = '/chapter1/';
     // register handlebars helper
     handlebars.registerHelper('if_or', function (a, b, opts) {
         if (a || b) {
