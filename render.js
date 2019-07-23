@@ -38,7 +38,6 @@ function renderFn (files, promptsData, render, next) {
     let filePaths = Object.keys(files),
         pipeObj = pipe();
     filePaths.forEach((filePath) => {
-      console.log(filePath);
         pipeObj.next(function () {
             let content = files[filePath].contents.toString();
             if (!/{{([^{}]+)}}/g.test(content)) {
