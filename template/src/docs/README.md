@@ -6,8 +6,8 @@ actionLink: /chapter1/
 ---
 
 ---
-home: {{ home }}
-heroImage: {{ heroImage }}
+home: {{ true }}
+heroImage: {{ '/logo.png' }}
 actionText: {{ actionText }}
 actionLink: {{ actionLink }}
 ---
